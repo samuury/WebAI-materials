@@ -1,16 +1,34 @@
 # WebAI-materials
 
-Projeto acadêmico da matéria de Desenvolvimento Web para IA: uma loja fictícia de materiais de estudo sobre inteligência artificial.
+Trabalho acadêmico da disciplina de Desenvolvimento Web para IA.
 
-## Início
+Projeto desenvolvido no Instituto de Tecnologia do Piauí, com foco em criar um site fictício de vendas de materiais de estudo sobre inteligência artificial.
 
-Abra `index.html` no navegador. A página usa HTML e CSS puros, sem etapa de build ou dependências de JavaScript.
+## Objetivo
 
-## Estrutura atual
+Criar uma página inicial e páginas complementares em HTML e CSS para apresentar uma loja fictícia de materiais de estudo sobre IA, com visual limpo, organizado e responsivo.
 
-- `index.html`: conteúdo e estrutura semântica da página inicial.
-- `styles.css`: identidade visual, componentes e regras responsivas.
+## Estrutura do projeto
 
-## Próximos passos
+- `index.html`: página inicial do site
+- `material.html`: página de detalhes do material de Introdução à IA
+- `material-ml.html`: página de detalhes de Aplicações Reais de IA
+- `material-ethics.html`: página de detalhes de Ética e Futuro
+- `styles.css`: estilos e responsividade do projeto
 
-A página inicial é o ponto de partida. O catálogo completo, as interações e outras páginas podem ser desenvolvidos em etapas separadas. Ao colaborar, mantenha o conteúdo no HTML e os estilos no CSS; prefira componentes reutilizáveis e teste a navegação em telas estreitas.
+## Integrantes
+
+### Wellison Samuel — Módulo 1
+- produção de conteúdo
+- organização da estrutura textual do site
+- definição da proposta e da narrativa do projeto
+
+### Ana Catharina — Módulo 2
+- desenvolvimento do visual do site
+- responsividade e organização do layout
+- ajustes de estilo e identidade visual
+
+### Erik França — Módulo 3
+- catálogo e navegação entre materiais
+- páginas de detalhe dos produtos
+- interações simples e experiência do usuário
