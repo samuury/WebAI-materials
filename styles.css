@@ -553,6 +553,41 @@ a {
   border-top: 1px solid var(--color-border);
 }
 
+#metodologia .cover {
+  display: none;
+}
+
+#metodologia .material-item {
+  background: #ffffff;
+  border: 1px solid #eef0f2;
+  border-top: none;
+  position: relative;
+  overflow: hidden;
+}
+
+#metodologia .material-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+#metodologia .material-grid > .material-item:nth-child(1)::before {
+  background: linear-gradient(90deg, #0052D4, #4364F7, #6FB1FC);
+}
+
+#metodologia .material-grid > .material-item:nth-child(2)::before {
+  background: linear-gradient(90deg, #7F00FF, #E100FF);
+}
+
+#metodologia .material-grid > .material-item:nth-child(3)::before {
+  background: linear-gradient(90deg, #11998e, #38ef7d);
+}
+
 .process-pill {
   font-size: 0.8rem;
   font-weight: 600;
