@@ -58,6 +58,8 @@ body {
 }
 
 body.dark-theme {
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
   --color-cloud-dancer: #121214;
   --color-surface: #1e1e24;
   --color-surface-alt: #2d2d35;
@@ -147,6 +149,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
   padding: 20px 5vw;
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
@@ -181,8 +184,17 @@ a {
   color: var(--color-text-muted);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
 .main-nav {
   display: flex;
+  flex: 1;
+  justify-content: center;
   gap: 32px;
 }
 
@@ -206,39 +218,117 @@ a {
   transition: all var(--transition-fast);
 }
 
-.theme-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
+.theme-toggle-switch {
+  position: relative;
+  width: 70px;
+  height: 36px;
   flex: 0 0 auto;
-  border: 1px solid var(--color-border);
-  border-radius: 50%;
-  background: var(--color-surface);
+  padding: 0;
+  overflow: visible;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(255, 255, 255, 0.45));
   color: var(--color-text-primary);
-  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.theme-toggle-btn:hover {
-  background: var(--color-surface-alt);
-  transform: scale(1.08) rotate(12deg);
-}
-
-.theme-toggle-btn:focus-visible {
+.theme-toggle-switch:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 
-.theme-icon-sun,
-body.dark-theme .theme-icon-moon {
-  display: none;
+.theme-toggle-switch:active {
+  transform: scale(0.97);
 }
 
-body.dark-theme .theme-icon-sun {
-  display: inline;
+.switch-track {
+  position: absolute;
+  inset: 0;
+  display: block;
+  border-radius: inherit;
+}
+
+.switch-icon {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  display: grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  transform: translateY(-50%);
+}
+
+.icon-sun {
+  left: 7px;
+}
+
+.icon-sun,
+.icon-sun *,
+.icon-sun svg,
+.icon-sun svg * {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+.icon-moon {
+  right: 7px;
+}
+
+.icon-moon,
+.icon-moon *,
+.icon-moon svg,
+.icon-moon svg * {
+  color: #000000 !important;
+  fill: #000000 !important;
+  stroke: #000000 !important;
+  filter: brightness(0) !important;
+}
+
+.switch-icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  color: #ffffff;
+  stroke: #ffffff;
+}
+
+.switch-thumb {
+  position: absolute;
+  z-index: 2;
+  top: 3px;
+  left: 3px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(30, 41, 59, 0.25);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle-switch:hover .switch-thumb {
+  transform: scale(1.05);
+}
+
+body.dark-theme .theme-toggle-switch {
+  border-color: rgba(168, 85, 247, 0.55);
+  background: linear-gradient(135deg, #21123f, #102b55);
+  color: #f0e7ff;
+  box-shadow: inset 0 2px 8px rgba(3, 7, 18, 0.55), 0 0 12px rgba(168, 85, 247, 0.4);
+}
+
+body.dark-theme .switch-thumb {
+  transform: translateX(34px);
+  background: linear-gradient(135deg, #e879f9, #a855f7);
+  box-shadow: 0 0 10px rgba(217, 70, 239, 0.7), 0 0 18px rgba(168, 85, 247, 0.45);
+}
+
+body.dark-theme .theme-toggle-switch:hover .switch-thumb {
+  transform: translateX(34px) scale(1.05);
 }
 
 .header-link:hover {
@@ -255,6 +345,10 @@ body.dark-theme .theme-icon-sun {
   padding: 80px 5vw 100px;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+.hero-copy {
+  max-width: 620px;
 }
 
 .eyebrow {
@@ -335,9 +429,19 @@ body.dark-theme .theme-icon-sun {
 }
 
 .hero-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
   margin-top: 24px;
+  margin-bottom: 3rem;
+  padding: 10px 16px;
   font-size: 0.85rem;
   color: var(--color-text-muted);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
 }
 
 .hero-visual {
@@ -451,8 +555,17 @@ body.dark-theme .theme-icon-sun {
 
 .material-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.cards-grid,
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: stretch;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .material-card-link {
@@ -470,6 +583,35 @@ body.dark-theme .theme-icon-sun {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.steps-card,
+.card,
+.cards-grid .material-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.steps-card .material-category,
+.card .material-category {
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+
+.steps-card h3,
+.steps-card p,
+.card h3,
+.card p {
+  text-align: left;
+}
+
+.steps-card .material-description,
+.card .material-description {
+  margin: 0.75rem 0 0;
 }
 
 .material-card-link:hover .material-item,
@@ -653,10 +795,9 @@ body.dark-theme .theme-icon-sun {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   height: 4px;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-radius: 16px 16px 0 0;
   transition: height 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1009,6 +1150,14 @@ body.dark-theme .theme-icon-sun {
 }
 
 @media (max-width: 900px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .main-nav {
+    gap: 20px;
+  }
+
   .product-hero {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1035,13 +1184,27 @@ body.dark-theme .theme-icon-sun {
 }
 
 @media (max-width: 600px) {
+  .cards-grid,
+  .steps-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .site-header {
     flex-direction: column;
     gap: 16px;
   }
 
+  .nav-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 0;
+  }
+
   .main-nav {
     gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .header-link {
