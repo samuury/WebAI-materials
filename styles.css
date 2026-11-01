@@ -51,15 +51,62 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: #ffffff;
-  color: #1a1a1a;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+body.dark-theme {
+  --color-cloud-dancer: #121214;
+  --color-surface: #1e1e24;
+  --color-surface-alt: #2d2d35;
+  --color-text-primary: #f0f0f2;
+  --color-text-secondary: #a0a0a8;
+  --color-accent: #f0f0f2;
+  --color-accent-hover: #ffffff;
+  --color-bg: #121214;
+  --color-border: #2d2d35;
+  --color-text-main: #f0f0f2;
+  --color-text-muted: #a0a0a8;
+  --color-primary: #2d2d35;
+  --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 16px 40px -12px rgba(0, 0, 0, 0.45);
+}
+
+body.dark-theme .site-header {
+  background-color: rgba(30, 30, 36, 0.9);
+}
+
+body.dark-theme .button-primary,
+body.dark-theme .btn-primary {
+  color: #f0f0f2;
+}
+
+body.dark-theme .button-primary:hover,
+body.dark-theme .btn-primary:hover {
+  background-color: #1e1e24;
+}
+
+body.dark-theme #metodologia .material-item {
+  background: #1e1e24;
+  border-color: #2d2d35;
+}
+
+body.dark-theme .site-footer {
+  border-top-color: #2d2d35;
 }
 
 .card, .material-card {
   background-color: var(--color-surface);
   border: 1px solid var(--color-surface-alt);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover,
+.material-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .card-description, .card-caption {
@@ -157,6 +204,41 @@ a {
   border: 1px solid var(--color-border);
   border-radius: 100px;
   transition: all var(--transition-fast);
+}
+
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--color-surface-alt);
+  transform: scale(1.08) rotate(12deg);
+}
+
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.theme-icon-sun,
+body.dark-theme .theme-icon-moon {
+  display: none;
+}
+
+body.dark-theme .theme-icon-sun {
+  display: inline;
 }
 
 .header-link:hover {
@@ -384,15 +466,16 @@ a {
   border-radius: var(--radius-md);
   padding: 24px;
   border: 1px solid var(--color-border);
-  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.material-card-link:hover .material-item {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-card);
+.material-card-link:hover .material-item,
+.material-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .cover {
@@ -574,6 +657,7 @@ a {
   height: 4px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+  transition: height 0.3s ease, box-shadow 0.3s ease;
 }
 
 #metodologia .material-grid > .material-item:nth-child(1)::before {
@@ -586,6 +670,22 @@ a {
 
 #metodologia .material-grid > .material-item:nth-child(3)::before {
   background: linear-gradient(90deg, #11998e, #38ef7d);
+}
+
+#metodologia .material-item:hover::before {
+  height: 6px;
+}
+
+#metodologia .material-grid > .material-item:nth-child(1):hover::before {
+  box-shadow: 0 0 12px rgba(67, 100, 247, 0.6);
+}
+
+#metodologia .material-grid > .material-item:nth-child(2):hover::before {
+  box-shadow: 0 0 12px rgba(225, 0, 255, 0.6);
+}
+
+#metodologia .material-grid > .material-item:nth-child(3):hover::before {
+  box-shadow: 0 0 12px rgba(56, 239, 125, 0.6);
 }
 
 .process-pill {
@@ -889,7 +989,7 @@ a {
 
 .footer,
 .site-footer {
-  border-top: 1px solid #eef0f2;
+  border-top: 1px solid var(--color-border);
   padding-top: 2rem;
   padding-bottom: 40px;
   padding-left: 5vw;
