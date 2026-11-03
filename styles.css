@@ -1768,6 +1768,10 @@ body.dark-theme .chat-msg-usuario {
   color: var(--color-text-main);
 }
 
+.contato-form textarea {
+  resize: none;
+}
+
 .contato-form button {
   align-self: flex-start;
   margin-top: 8px;
