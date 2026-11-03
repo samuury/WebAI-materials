@@ -17,7 +17,8 @@ O **WebAI Materials** é uma plataforma web fictícia focada em apresentar e org
 
 ## 📁 Estrutura do Projeto
 
-- `index.html`: Página inicial com destaques, introdução e visão geral dos cadernos de estudo.
+- `index.html`: Página inicial com destaques, introdução, visão geral dos cadernos e seção de contato.
+- `catalogo.html`: Catálogo completo com os cards dos materiais e FAQ.
 - `material.html`: Página de detalhes do caderno "Introdução à IA".
 - `material-ml.html`: Página de detalhes do caderno "Aplicações Reais de IA".
 - `material-ethics.html`: Página de detalhes do caderno "Ética e Futuro".
@@ -39,3 +40,4 @@ O **WebAI Materials** é uma plataforma web fictícia focada em apresentar e org
 ### Erik França — Módulo 3 (Navegação & Catálogo)
 - Catálogo e navegação entre os materiais de estudo.
 - Estrutura das páginas de detalhes de produto e experiência do utilizador.
+- Página de catálogo, FAQ interativo, popup "Quero este material", botão de WhatsApp fictício e seção de contato.
