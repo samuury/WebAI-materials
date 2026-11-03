@@ -1190,25 +1190,67 @@ body.dark-theme .theme-toggle-switch:hover .switch-thumb {
   }
 
   .site-header {
-    flex-direction: column;
-    gap: 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+    padding: 12px 5vw;
+  }
+
+  .brand {
+    order: 1;
+    gap: 8px;
+    font-size: 1rem;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
   }
 
   .nav-actions {
-    width: 100%;
-    flex-direction: column;
-    gap: 12px;
+    order: 2;
+    width: auto;
+    flex-direction: row;
+    gap: 8px;
     margin-left: 0;
   }
 
   .main-nav {
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
+    order: 3;
+    flex: 0 0 100%;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 2px 0 4px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-nav a {
+    flex: 0 0 auto;
+    font-size: 0.88rem;
   }
 
   .header-link {
     display: none;
+  }
+
+  @media (max-width: 360px) {
+    .main-nav {
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      overflow: visible;
+    }
+
+    .main-nav a {
+      font-size: 0.82rem;
+    }
   }
 
   .product-meta {
