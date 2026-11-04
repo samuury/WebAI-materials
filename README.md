@@ -34,18 +34,19 @@ O **WebAI Materials** é uma plataforma web fictícia criada para apresentar e o
 
 ## 👥 Integrantes e Divisão de Módulos
 
-### Wellison Samuel — Módulo 1 (Conteúdo & Estrutura)
+### Wellison Samuel — Módulo 1 (Conteúdo, Estrutura & Backend)
+- **Base Inicial do Projeto:** Setup da estrutura base dos ficheiros, organização inicial do repositório e configurações iniciais.
+- **Implementação do Claude:** Integração e lógica de suporte ao assistente virtual WebAI utilizando a API do Claude.
 - **Produção Teórica:** Criação e curadoria dos textos explicativos sobre Inteligência Artificial para os cadernos de estudo.
-- **Hierarquia de Informação:** Definição da proposta pedagógica, estrutura textual e organização dos conceitos em cada página.
-- **Alinhamento Narrativo:** Garantia de uma linguagem clara, acessível e alinhada com o propósito acadêmico do projeto.
+- **Hierarquia de Informação:** Definição da proposta pedagógica, estrutura textual e organização dos conceitos.
 
 ### Ana Catharina — Módulo 2 (Interface, Temas & Interatividade)
 - **Identidade Visual & UI:** Desenvolvimento do design system, paleta de cores, tipografia e estilização completa em CSS.
 - **Sistema de Temas (Dark/Light Mode):** Criação do botão deslizante (*toggle switch*) com ícones customizados e persistência via `localStorage`.
-- **Layout Responsivo:** Estruturação fluida utilizando CSS Grid e Flexbox adaptada a ecrãs de computadores, tablets e dispositivos móveis.
-- **Componentes Interativos:** Implementação do modal de requisição integrado à API do WhatsApp e do Assistente Virtual WebAI lateral.
+- **Layout Responsivo:** Estruturação fluida utilizando CSS Grid e Flexbox adaptada a telas de computadores, tablets e smartphones.
+- **Componentes Interativos:** Implementação do modal de requisição integrado à API do WhatsApp e interface do Assistente Virtual WebAI lateral.
 
 ### Erik França — Módulo 3 (Navegação & Catálogo)
-- **Arquitetura do Catálogo:** Organização da grelha de materiais, filtros e listagem completa dos cadernos de estudo.
+- **Arquitetura do Catálogo:** Organização da grade de materiais, filtros e listagem completa dos cadernos de estudo.
 - **Páginas de Detalhes:** Construção das páginas individuais (`material.html`, `material-ml.html`, `material-ethics.html`) com especificações de cada módulo.
-- **Experiência do Utilizador (UX):** Fluxo de navegação entre o catálogo, visualização de detalhes e secções de dúvidas frequentes (*accordions*).
+- **Experiência do Usuário (UX):** Fluxo de navegação entre o catálogo, visualização de detalhes e seções de dúvidas frequentes (*accordions*).
