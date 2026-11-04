@@ -35,13 +35,17 @@ O **WebAI Materials** é uma plataforma web fictícia criada para apresentar e o
 ## 👥 Integrantes e Divisão de Módulos
 
 ### Wellison Samuel — Módulo 1 (Conteúdo & Estrutura)
-- Produção de conteúdo e narrativa teórica sobre Inteligência Artificial.
-- Organização da estrutura textual e hierarquia de informação do site.
+- **Produção Teórica:** Criação e curadoria dos textos explicativos sobre Inteligência Artificial para os cadernos de estudo.
+- **Hierarquia de Informação:** Definição da proposta pedagógica, estrutura textual e organização dos conceitos em cada página.
+- **Alinhamento Narrativo:** Garantia de uma linguagem clara, acessível e alinhada com o propósito acadêmico do projeto.
 
 ### Ana Catharina — Módulo 2 (Interface, Temas & Interatividade)
-- Desenvolvimento da identidade visual, estilização e sistema de temas (Dark/Light).
-- Layout, alinhamento responsivo, botões interativos, modal do WhatsApp e assistente lateral.
+- **Identidade Visual & UI:** Desenvolvimento do design system, paleta de cores, tipografia e estilização completa em CSS.
+- **Sistema de Temas (Dark/Light Mode):** Criação do botão deslizante (*toggle switch*) com ícones customizados e persistência via `localStorage`.
+- **Layout Responsivo:** Estruturação fluida utilizando CSS Grid e Flexbox adaptada a ecrãs de computadores, tablets e dispositivos móveis.
+- **Componentes Interativos:** Implementação do modal de requisição integrado à API do WhatsApp e do Assistente Virtual WebAI lateral.
 
 ### Erik França — Módulo 3 (Navegação & Catálogo)
-- Estruturação do catálogo e navegação entre os materiais de estudo.
-- Criação das páginas de detalhes de produtos e experiência do usuário (UX).
+- **Arquitetura do Catálogo:** Organização da grelha de materiais, filtros e listagem completa dos cadernos de estudo.
+- **Páginas de Detalhes:** Construção das páginas individuais (`material.html`, `material-ml.html`, `material-ethics.html`) com especificações de cada módulo.
+- **Experiência do Utilizador (UX):** Fluxo de navegação entre o catálogo, visualização de detalhes e secções de dúvidas frequentes (*accordions*).
